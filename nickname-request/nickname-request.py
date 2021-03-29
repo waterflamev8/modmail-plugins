@@ -89,7 +89,7 @@ class NicknameRequest(commands.Cog):
             return
 
         if payload.emoji.name == "✅":
-            await member.edit(nick=message.content.split(" wants their nickname changed to ")[1][2:-3])
+            await member.edit(nick=message.embeds[0].description.split(" wants their nickname changed to ")[1][2:-3])
             await message.edit(embed=Embed(description="Approved!", colour=0x00FF7F))
             await member.send(embed=Embed(description="Your nickname change has been approved!", colour=0X00FF7F))
         else:
